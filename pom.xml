@@ -1,0 +1,71 @@
+<project xmlns              = "http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi          = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
+                               http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>gov.goias</groupId>
+    <artifactId>sat2</artifactId>
+    <version>0.2.0</version>
+    <packaging>pom</packaging>
+    <name>Sat 2</name>
+    <description>Sistema de exemplo</description>
+
+    <organization>
+        <name>Segplan - Secretaria de Gestao e Planejamento do Estado de Goias</name>
+        <url>http://www.segplan.go.goias.gov.br</url>
+    </organization>
+
+    <scm>
+        <connection>scm:git:http://git.intra.goias.gov.br/supart/sat2.git</connection>
+    </scm>
+
+    <modules>
+        <module>sat2-app</module>
+        <module>sat2-model</module>
+    </modules>
+
+    <properties>
+        <spring.version>4.3.4.RELEASE</spring.version>
+        <java.encoding>UTF-8</java.encoding>
+        <project.build.sourceEncoding>${java.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${java.encoding}</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+       <profile>
+        <id>local</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+    </profiles>
+</project>
