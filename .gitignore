@@ -1,0 +1,15 @@
+.idea/*
+*.iws
+# IntelliJ
+/out/
+.idea_modules/
+*.class
+# Log file
+*.log
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+*.iml
+hs_err_pid*
