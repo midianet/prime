@@ -6,13 +6,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 
-/**
- * <b>Título:</b> DataTableResponse
- * <br><b>Descrição:</b> Representação para objeto<br>
- * usado para integração com plugins Jquery DataTable
- * <br><b>Copyright:</b> Copyright(c) 2015
- * <br><b>Empresa:</b> SEGPLAN
- */
 @XmlRootElement(name=DataTableResponse.SCHEMA_NAME)
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = DataTableResponse.SCHEMA_NAME,propOrder = {})
@@ -20,8 +13,8 @@ public class DataTableResponse {
     private Integer draw;
     private Integer recordsTotal;
     private Integer recordsFiltered;
-    private List data;
-    private String error;
+    private List    data;
+    private String  error;
 
     public void setDraw(final Integer draw) {
         this.draw = draw;

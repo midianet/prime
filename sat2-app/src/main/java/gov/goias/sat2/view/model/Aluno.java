@@ -14,12 +14,10 @@ import static org.dozer.loader.api.TypeMappingOptions.mapNull;
 
 @Data
 public class Aluno implements Convertible {
-    private Long id;
+    private Long   id;
     private String nome;
     private String email;
-
     //private Date nascimento;
-
     private String sexo;
     private Boolean situacao;
 

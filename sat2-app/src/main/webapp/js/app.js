@@ -1,20 +1,16 @@
 'use strict';
-
-// Declare app level module which depends on views, and components
 angular.module('myApp', [
     'ngRoute',
     'myApp.alunos',
     'myApp.alunosFormPadrao',
     'myApp.alunosListaPaginada',
     'myApp.layout',
-    'myApp.version',
     'myApp.messages',
     'myApp.validations',
     'myApp.notifications',
     'goDataTable',
     'goForm'
 ]).config(['$routeProvider', function () {
-
     $.notify.addStyle("segplan", {
         html: "<div> <span data-notify-text>  </span><div data-notify-html='mensagemHtml'> </div> </div>",
         classes: {
@@ -55,8 +51,6 @@ angular.module('myApp', [
             }
         }
     });
-
-
     $.notify.addStyle("segplan-modal", {
         html: "<div> <span data-notify-text></span> <div data-notify-html='mensagemHtml'> </div></div>",
         classes: {
@@ -99,15 +93,12 @@ angular.module('myApp', [
     });
 
 }]).controller('MyAppCtrl', ['$scope', '$http', 'Messages', 'Validation', 'Notifica', 'API_BASE_URL', '$window', function ($scope, $http, Messages, Validation, Notifica, API_BASE_URL, $window) {
-
         $scope.goToRemoteTagUrl = function () {
             $window.open($scope.toolbar.gitRepositoryState.remoteTagUrl);
         }
         $scope.goToRemoteBuildUrl = function () {
             $window.open($scope.toolbar.gitRepositoryState.remoteBuildUrl);
         }
-
-
         $http({
             method: "GET",
             url: API_BASE_URL + '/toolbar'
@@ -121,8 +112,6 @@ angular.module('myApp', [
                 Notifica.exibaErro(null, $scope.retorno.mensagens);
             }
         });
-
-
     },
 ])
 .value('CONTEXT_BASE_URL', '/sat2-app')

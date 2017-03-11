@@ -1,12 +1,8 @@
 package gov.goias.sat2.representation;
 
 import lombok.Data;
-
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.IOException;
 
-
-@XmlRootElement
 @Data
 public class ToolbarRep {
 

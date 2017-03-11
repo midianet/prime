@@ -9,15 +9,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 
-/**
- * <b>Título:</b> Convertible
- * <br><b>Descrição:</b> Define API para conversões de objetos
- * <br><b>Copyright:</b> Copyright(c) 2015
- * <br><b>Empresa:</b> SEGPLAN
- */
 public interface Convertible {
 
-    final Logger LOGGER = Logger.getLogger(Convertible.class);
+    final Logger LOG = Logger.getLogger(Convertible.class);
 
     /**
      * Constroi uma lista de valores das propriedades de um Pojo
@@ -45,9 +39,9 @@ public interface Convertible {
                 }
                 values.add(asString(getMethodValue(fields[i])));
             } catch (IllegalAccessException e) {
-                LOGGER.error(e);
+                LOG.error(e);
             } catch (InvocationTargetException e) {
-                LOGGER.error(e);
+                LOG.error(e);
             }
         }
         return values;
@@ -79,9 +73,9 @@ public interface Convertible {
                 }
                 map.put(fields[i], asString(getMethodValue(fields[i])));
             } catch (IllegalAccessException e) {
-                LOGGER.error(e);
+                LOG.error(e);
             } catch (InvocationTargetException e) {
-                LOGGER.error(e);
+                LOG.error(e);
             }
         }
         return map;

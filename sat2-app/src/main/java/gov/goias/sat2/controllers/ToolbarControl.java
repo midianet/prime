@@ -2,8 +2,6 @@ package gov.goias.sat2.controllers;
 
 import gov.goias.sat2.representation.ToolbarRep;
 import gov.goias.sat2.representation.UsuarioRep;
-import javaslang.control.Try;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,19 +13,16 @@ import java.io.IOException;
 
 @Controller
 @Path("toolbar")
-public class ToolbarQueries {
+public class ToolbarControl {
 
     @Context
     private HttpServletRequest req;
 
     @GET
     public ToolbarRep toolbar() throws IOException {
-
-        final String username = "Fake";
-
+        final String username = "Usuário";
         final UsuarioRep u = new UsuarioRep();
         u.setNomeUsuario(username);
-
         return new ToolbarRep(u);
     }
 
